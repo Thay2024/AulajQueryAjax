@@ -1,0 +1,70 @@
+{
+  "usuarios": [
+    {
+      "nome": "Raquel ",
+      "email": "raquel@gmail.com",
+      "cargo": "Administrador",
+      "id": "902d"
+    },
+    {
+      "id": "49b2",
+      "nome": "Miguel",
+      "email": "miguel@uol.com.br",
+      "cargo": "Especialista"
+    },
+    {
+      "id": "4452",
+      "nome": "Tais",
+      "email": "tais@yahoo.com",
+      "cargo": "Especialista"
+    },
+    {
+      "id": "e313",
+      "nome": "Beatriz",
+      "email": "bia@gmail.com",
+      "cargo": "Supervisor"
+    },
+    {
+      "id": "7644",
+      "nome": "Carmem",
+      "email": "carmem@gmail.com",
+      "cargo": "Administrador"
+    },
+    {
+      "id": "e24b",
+      "nome": "Maria",
+      "email": "maria@outlook.com",
+      "cargo": "Supervisor"
+    },
+    {
+      "id": "d74a",
+      "nome": "Yasmin",
+      "email": "min@yahoo.com.br",
+      "cargo": "Especialista"
+    },
+    {
+      "id": "bb92",
+      "nome": "Jhenyfer",
+      "email": "jhe@bol.com.br",
+      "cargo": "Especialista"
+    },
+    {
+      "id": "aded",
+      "nome": "Thomas",
+      "email": "tho@outlook.com",
+      "cargo": "Especialista"
+    },
+    {
+      "id": "2009",
+      "nome": "Aroldo",
+      "email": "aroldo@live.com",
+      "cargo": "Supervisor"
+    },
+    {
+      "id": "ef5e",
+      "nome": "Jefferson",
+      "email": "jeff@live.com",
+      "cargo": "Supervisor"
+    }
+  ]
+}
