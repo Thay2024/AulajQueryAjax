@@ -19,16 +19,10 @@
       "cargo": "Especialista"
     },
     {
-      "id": "e313",
       "nome": "Beatriz",
       "email": "bia@gmail.com",
-      "cargo": "Supervisor"
-    },
-    {
-      "nome": "Carmem",
-      "email": "carmem1@gmail.com",
-      "cargo": "Administrador",
-      "id": "7644"
+      "cargo": "Supervisor",
+      "id": "e313"
     },
     {
       "id": "e24b",
@@ -68,9 +62,27 @@
     },
     {
       "nome": "Thay",
-      "email": "paradis@gmail.com",
+      "email": "paradise@gmail.com",
       "cargo": "Administrador",
       "id": "c26b"
+    },
+    {
+      "nome": "Carmem",
+      "email": "carmem1@gmail.com",
+      "cargo": "Especialista",
+      "id": "d39e"
+    },
+    {
+      "id": "5544",
+      "nome": "Agatha",
+      "email": "agt@live.com",
+      "cargo": "Especialista"
+    },
+    {
+      "id": "ebc8",
+      "nome": "Aline",
+      "email": "line@bol.com.br",
+      "cargo": "Especialista"
     }
   ]
 }
