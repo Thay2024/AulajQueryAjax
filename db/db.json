@@ -1,16 +1,16 @@
 {
   "usuarios": [
     {
-      "nome": "Raquel ",
+      "nome": "Raquel",
       "email": "raquel@gmail.com",
       "cargo": "Administrador",
       "id": "902d"
     },
     {
-      "id": "49b2",
       "nome": "Miguel",
       "email": "miguel@uol.com.br",
-      "cargo": "Especialista"
+      "cargo": "Especialista",
+      "id": "49b2"
     },
     {
       "id": "4452",
@@ -25,10 +25,10 @@
       "cargo": "Supervisor"
     },
     {
-      "id": "7644",
       "nome": "Carmem",
-      "email": "carmem@gmail.com",
-      "cargo": "Administrador"
+      "email": "carmem1@gmail.com",
+      "cargo": "Administrador",
+      "id": "7644"
     },
     {
       "id": "e24b",
@@ -65,6 +65,12 @@
       "nome": "Jefferson",
       "email": "jeff@live.com",
       "cargo": "Supervisor"
+    },
+    {
+      "nome": "Thay",
+      "email": "paradis@gmail.com",
+      "cargo": "Administrador",
+      "id": "c26b"
     }
   ]
 }
