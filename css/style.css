@@ -81,10 +81,10 @@ button,
     background-color: #DAA520; /* Fundo dourado para botões */
     color: #111; /* Texto escuro para contraste no botão */
     border: none;
-    padding: 12px 20px;
+    padding: 12px 10px;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 1em;
+    font-size: 0.70em;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 0.5px;

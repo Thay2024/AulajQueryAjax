@@ -4,85 +4,106 @@
       "nome": "Raquel",
       "email": "raquel@gmail.com",
       "cargo": "Administrador",
+      "senha": "admin123",
       "id": "902d"
     },
     {
       "nome": "Miguel",
       "email": "miguel@uol.com.br",
       "cargo": "Especialista",
+      "senha": "mi123",
       "id": "49b2"
     },
     {
       "id": "4452",
       "nome": "Tais",
       "email": "tais@yahoo.com",
-      "cargo": "Especialista"
+      "cargo": "Especialista",
+      "senha": "ta123"
     },
     {
       "nome": "Beatriz",
       "email": "bia@gmail.com",
       "cargo": "Supervisor",
-      "id": "e313"
+      "id": "e313",
+      "senha": "super123"
     },
     {
       "id": "e24b",
       "nome": "Maria",
       "email": "maria@outlook.com",
-      "cargo": "Supervisor"
+      "cargo": "Supervisor",
+      "senha": "ma123"
     },
     {
       "id": "d74a",
       "nome": "Yasmin",
       "email": "min@yahoo.com.br",
-      "cargo": "Especialista"
+      "cargo": "Especialista",
+      "senha": "yas123"
     },
     {
       "id": "bb92",
       "nome": "Jhenyfer",
       "email": "jhe@bol.com.br",
-      "cargo": "Especialista"
+      "cargo": "Especialista",
+      "senha": "jhe123"
     },
     {
       "id": "aded",
       "nome": "Thomas",
       "email": "tho@outlook.com",
-      "cargo": "Especialista"
+      "cargo": "Especialista",
+      "senha": "tho123"
     },
     {
       "id": "2009",
       "nome": "Aroldo",
       "email": "aroldo@live.com",
-      "cargo": "Supervisor"
+      "cargo": "Supervisor",
+      "senha": "aro123"
     },
     {
       "id": "ef5e",
       "nome": "Jefferson",
       "email": "jeff@live.com",
-      "cargo": "Supervisor"
+      "cargo": "Supervisor",
+      "senha": "jef123"
     },
     {
       "nome": "Thay",
       "email": "paradise@gmail.com",
       "cargo": "Administrador",
-      "id": "c26b"
+      "id": "c26b",
+      "senha": "thay123"
     },
     {
       "nome": "Carmem",
       "email": "carmem1@gmail.com",
       "cargo": "Especialista",
-      "id": "d39e"
+      "id": "d39e",
+      "senha": "espec123"
     },
     {
       "id": "5544",
       "nome": "Agatha",
       "email": "agt@live.com",
-      "cargo": "Especialista"
+      "cargo": "Especialista",
+      "senha": "aga123"
     },
     {
       "id": "ebc8",
       "nome": "Aline",
       "email": "line@bol.com.br",
-      "cargo": "Especialista"
+      "cargo": "Especialista",
+      "senha": "lin123"
+    },
+    {
+      "id": "7972",
+      "nome": "Breno",
+      "email": "breno@hotmail.com",
+      "cargo": "Supervisor",
+      "senha": "bre123"
     }
   ]
 }
