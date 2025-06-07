@@ -6,4 +6,3 @@ Sistema de cadastro
 # Cargo: Especialista pode apenas editar e visualizar seu proprio dado.
 
 Tela de cadastro para o usuário realizar o cadastro.
-Todos os perfis com tela de cadastro para realizar cadastro de novo usuário.
