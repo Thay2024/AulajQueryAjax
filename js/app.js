@@ -1,11 +1,9 @@
 $(document).ready(function() {
-    // --- O ARRAY DE LOGIN FOI REMOVIDO! A validação agora é 100% via API ---
-
-    // Variáveis para guardar o estado do usuário logado
+    
     let cargoLogado = "";
     let idUsuarioLogado = null;
 
-    // --- FUNÇÕES DE MENSAGEM ---
+    
     function mensagem(msg, isError = false) {
         $("#mensagemLogin").text(msg).toggleClass("error", isError);
         setTimeout(() => $("#mensagemLogin").text(""), 5000);
@@ -15,23 +13,22 @@ $(document).ready(function() {
         setTimeout(() => $("#mensagemCadastro").text(""), 3000);
     }
 
-    // --- LÓGICA DE LOGIN, LOGOUT E AUTO-CADASTRO ---
-
-    // Evento de clique para o botão "Cadastrar Usuário"
+    
     $("#cadastroLink").on("click", function() {
-        $("#loginSection").hide();
+        $("#loginSection").hide(); 
         $("#formUser")[0].reset();
         $("#idUsuario").val("");
-        // Mostra o campo de senha para o auto-cadastro
-        $("#cadastroSenha").show();
-        $("h2", "#cadastroSection").text("Cadastro de Novo Usuário");
-        $("#cadastroSection button[type='submit']").text("Cadastrar");
-        $("#cadastroSection").show();
+
+         $("#cargo").hide();
+        
+        $("#cadastroSenha").show(); 
+        $("h2", "#cadastroSection").text("Cadastro de Novo Usuário"); 
+        $("#cadastroSection button[type='submit']").text("Cadastrar"); 
+        $("#cadastroSection").show(); 
     });
 
-    // Função de Login (ALTERADO para enviar usuário e senha na chamada AJAX)
-// Função de Login (ALTERADO para mostrar/esconder o formulário de cadastro por cargo)
-$("#loginForm").submit(function(evento) {
+    
+$("#loginForm").submit(function(evento) { 
     evento.preventDefault();
     const usuarioInput = $("#usuario").val();
     const senhaInput = $("#senha").val();
@@ -48,20 +45,19 @@ $("#loginForm").submit(function(evento) {
                 
                 $("#loginSection").hide();
 
-                // ALTERADO: Lógica de visibilidade das seções por cargo
+                
                 if (cargoLogado === 'Administrador') {
-                    // Admin vê o formulário de cadastro E a lista
+                    
                     $("#formUser")[0].reset();
                     $("#idUsuario").val("");
                     $("h2", "#cadastroSection").text("Cadastro de Usuário");
                     $("#cadastroSection button[type='submit']").text("Cadastrar");
-                    // Garante que o campo de senha esteja visível e obrigatório para o Admin cadastrar
-                    $("#cadastroSenha").show(); 
-                    $("#cadastroSenha").prop('required', true);
-
+                    
+                    $("#cadastroSenha").show().prop('required', true);
+                    $("#cargo").show(); 
                     $("#cadastroSection, #usuariosSection").show();
                 } else {
-                    // Outros cargos (Supervisor, Especialista) veem APENAS a lista.
+                    
                     $("#cadastroSection").hide();
                     $("#usuariosSection").show();
                 }
@@ -77,7 +73,7 @@ $("#loginForm").submit(function(evento) {
     });
 });
 
-    // Função de Logout (Sair)
+    
     $(document).on("click", ".btnSair", function() {
         cargoLogado = "";
         idUsuarioLogado = null;
@@ -88,9 +84,7 @@ $("#loginForm").submit(function(evento) {
         $("#loginSection").show();
     });
 
-    // --- FUNÇÕES DE CRUD ---
-
-    // Função para LISTAR usuários (sem alteração)
+    
     function listarUsuarios() {
         $.ajax({
             url: 'http://localhost:3000/usuarios',
@@ -133,56 +127,68 @@ $("#loginForm").submit(function(evento) {
         });
     }
 
-    // Função para CADASTRAR ou EDITAR usuários (ALTERADO para incluir a senha no cadastro)
-    $("#formUser").submit(function(evento) {
-        evento.preventDefault();
-        const nome = $("#nome").val();
-        const email = $("#email").val();
-        const cargo = $("#cargo").val();
-        const id = $("#idUsuario").val();
-        const senha = $("#cadastroSenha").val(); // Pega a senha do novo campo
+    
+$("#formUser").submit(function(evento) {
+    evento.preventDefault();
+    const nome = $("#nome").val();
+    const email = $("#email").val();
+    const id = $("#idUsuario").val();
+    const senha = $("#cadastroSenha").val();
 
-        let dadoUsuario = { nome, email, cargo };
-        let url = 'http://localhost:3000/usuarios';
-        let method = 'POST';
+    let dadoUsuario = { nome, email };
+    let url = 'http://localhost:3000/usuarios';
+    let method = 'POST';
 
-        if (id) {
-            // Editando um usuário (não vamos alterar a senha aqui para manter simples)
-            url += `/${id}`;
-            method = 'PUT';
-        } else {
-            // Criando um novo usuário, adicionamos a senha ao objeto
-            dadoUsuario.senha = senha;
+    if (id) {
+        
+        url += `/${id}`;
+        method = 'PATCH'; 
+        if (cargoLogado === 'Administrador') {
+            dadoUsuario.cargo = $("#cargo").val();
         }
+    } else {
+        
+        dadoUsuario.senha = senha;
+        
+        dadoUsuario.cargo = (cargoLogado === 'Administrador') ? $("#cargo").val() : "";
+    }
 
-        $.ajax({
-            url: url,
-            method: method,
-            contentType: 'application/json',
-            data: JSON.stringify(dadoUsuario),
-            success: function() {
-                if (cargoLogado) {
-                    mensagemCadastro(id ? "Usuário atualizado com sucesso!" : "Usuário cadastrado com sucesso!");
-                    $("#formUser")[0].reset();
-                    $("#idUsuario").val("");
+    $.ajax({
+        url: url,
+        method: method,
+        contentType: 'application/json',
+        data: JSON.stringify(dadoUsuario),
+        success: function() {
+            if (cargoLogado) {
+                mensagemCadastro(id ? "Usuário atualizado com sucesso!" : "Usuário cadastrado com sucesso!");
+                $("#formUser")[0].reset();
+                $("#idUsuario").val("");
+                
+                if (cargoLogado === 'Administrador') {
                     $("h2", "#cadastroSection").text("Cadastro de Usuário");
                     $("#cadastroSection button[type='submit']").text("Cadastrar");
-                    listarUsuarios();
+                    $("#cadastroSenha").show().prop('required', true);
+                    $("#cargo").show();
                 } else {
+                    
                     $("#cadastroSection").hide();
-                    $("#formUser")[0].reset();
-                    $("#loginSection").show();
-                    mensagem("Cadastro realizado com sucesso! Por favor, faça o login.", false);
                 }
-            },
-            error: function() {
-                mensagemCadastro(id ? "Erro ao atualizar usuário." : "Erro ao cadastrar usuário.", true);
+                listarUsuarios();
+            } else {
+                
+                $("#cadastroSection").hide();
+                $("#formUser")[0].reset();
+                $("#loginSection").show();
+                mensagem("Cadastro realizado com sucesso! Por favor, faça o login.", false);
             }
-        });
+        },
+        error: function() {
+            mensagemCadastro(id ? "Erro ao atualizar usuário." : "Erro ao cadastrar usuário.", true);
+        }
     });
+});
 
-    // Evento para o botão EDITAR (ALTERADO para esconder o campo de senha)
-    // Evento para o botão EDITAR (ALTERADO para garantir que o formulário apareça)
+    
 $(document).on("click", ".btnEditar", function() {
     const id = $(this).data("id");
     $.ajax({
@@ -190,7 +196,6 @@ $(document).on("click", ".btnEditar", function() {
         method: 'GET',
         success: function(usuario) {
             if (cargoLogado === "Administrador" || usuario.id == idUsuarioLogado) {
-                // NOVO: Garante que a seção do formulário apareça antes de preenchê-lo
                 $("#cadastroSection").show();
                 
                 $("#nome").val(usuario.nome);
@@ -200,6 +205,12 @@ $(document).on("click", ".btnEditar", function() {
                 
                 $("#cadastroSenha").hide();
                 $("#cadastroSenha").prop('required', false);
+
+                if (cargoLogado === 'Administrador') {
+                    $("#cargo").show(); 
+                } else {
+                    $("#cargo").hide(); 
+                }
 
                 $("h2", "#cadastroSection").text("Editar Usuário");
                 $("#cadastroSection button[type='submit']").text("Salvar Alterações");
@@ -214,7 +225,7 @@ $(document).on("click", ".btnEditar", function() {
     });
 });
 
-    // Evento para o botão EXCLUIR (sem alteração)
+    
     $(document).on("click", ".btnExcluir", function() {
         const id = $(this).data("id");
         if (confirm("Tem certeza que deseja excluir este usuário?")) {

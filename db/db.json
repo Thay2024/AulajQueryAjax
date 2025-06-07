@@ -72,10 +72,9 @@
     },
     {
       "nome": "Thay",
-      "email": "paradise@gmail.com",
+      "email": "paradises@gmail.com",
       "cargo": "Administrador",
-      "id": "c26b",
-      "senha": "thay123"
+      "id": "c26b"
     },
     {
       "nome": "Carmem",
@@ -99,11 +98,17 @@
       "senha": "lin123"
     },
     {
-      "id": "7972",
-      "nome": "Breno",
+      "nome": "Brenno",
       "email": "breno@hotmail.com",
       "cargo": "Supervisor",
-      "senha": "bre123"
+      "id": "7972"
+    },
+    {
+      "id": "c6cb",
+      "nome": "TESTE01",
+      "email": "teste001@gmail.com",
+      "senha": "1234",
+      "cargo": "Especialista"
     }
   ]
 }

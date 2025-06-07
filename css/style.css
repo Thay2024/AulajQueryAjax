@@ -1,4 +1,4 @@
-/* css/style.css */
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -7,8 +7,8 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(to bottom right, #1a1a1a, #000000); /* Degradê de cinza escuro para preto */
-    color: #f0f0f0; /* Texto principal off-white para melhor legibilidade */
+    background: linear-gradient(to bottom right, #1a1a1a, #000000); 
+    color: #f0f0f0; 
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -18,41 +18,41 @@ body {
 }
 
 h2 {
-    color: #DAA520; /* Dourado para títulos */
+    color: #DAA520; 
     text-align: center;
     margin-bottom: 25px;
     font-size: 2em;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
 }
 
-/* Estilização das Seções */
+
 #loginSection,
 #cadastroSection,
 #usuariosSection {
-    background-color: rgba(20, 20, 20, 0.85); /* Fundo escuro e levemente transparente para as seções */
+    background-color: rgba(20, 20, 20, 0.85); 
     padding: 30px;
     border-radius: 10px;
-    border: 1px solid #DAA520; /* Borda dourada */
-    box-shadow: 0 0 20px rgba(218, 165, 32, 0.3); /* Brilho dourado sutil */
+    border: 1px solid #DAA520; 
+    box-shadow: 0 0 20px rgba(218, 165, 32, 0.3); 
     width: 100%;
-    max-width: 700px; /* Largura máxima para o conteúdo das seções */
+    max-width: 700px; 
     margin-bottom: 30px;
 }
 
-/* Elementos de Formulário */
+
 form {
     display: flex;
     flex-direction: column;
-    gap: 15px; /* Espaço entre os elementos do formulário */
+    gap: 15px; 
 }
 
 input[type="text"],
 input[type="password"],
 input[type="email"],
 select {
-    background-color: #2c2c2c; /* Fundo escuro para inputs */
-    color: #f0f0f0; /* Texto branco nos inputs */
-    border: 1px solid #DAA520; /* Borda dourada */
+    background-color: #2c2c2c; 
+    color: #f0f0f0; 
+    border: 1px solid #DAA520; 
     padding: 12px;
     border-radius: 5px;
     font-size: 1em;
@@ -62,7 +62,7 @@ select {
 input[type="text"]::placeholder,
 input[type="password"]::placeholder,
 input[type="email"]::placeholder {
-    color: #888; /* Cor do placeholder */
+    color: #888; 
 }
 
 input[type="text"]:focus,
@@ -70,16 +70,16 @@ input[type="password"]:focus,
 input[type="email"]:focus,
 select:focus {
     outline: none;
-    border-color: #FFD700; /* Dourado mais claro no foco */
-    box-shadow: 0 0 8px rgba(255, 215, 0, 0.5); /* Brilho dourado no foco */
+    border-color: #FFD700;
+    box-shadow: 0 0 8px rgba(255, 215, 0, 0.5); 
 }
 
 button,
 .btnEditar,
-.btnSair, /* Classes dos botões na tabela */
+.btnSair, 
 .btnExcluir {
-    background-color: #DAA520; /* Fundo dourado para botões */
-    color: #111; /* Texto escuro para contraste no botão */
+    background-color: #DAA520; 
+    color: #111; 
     border: none;
     padding: 12px 10px;
     border-radius: 5px;
@@ -89,104 +89,104 @@ button,
     text-transform: uppercase;
     letter-spacing: 0.5px;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    margin: 5px 0; /* Pequena margem para botões, especialmente os da tabela */
+    margin: 5px 0; 
 }
 
 button:hover,
 .btnEditar:hover,
 .btnSair:hover,
 .btnExcluir:hover {
-    background-color: #B8860B; /* Dourado mais escuro no hover */
-    transform: translateY(-2px); /* Leve elevação no hover */
+    background-color: #B8860B; 
+    transform: translateY(-2px); 
 }
 
 button:active,
 .btnEditar:active,
 .btnSair:active,
 .btnExcluir:active {
-    transform: translateY(0px); /* Empurra para baixo ao clicar */
+    transform: translateY(0px); 
 }
 
 button:disabled,
 .btnEditar:disabled,
 .btnSair:disabled,
 .btnExcluir:disabled {
-    background-color: #555; /* Cinza escuro para botões desabilitados */
-    color: #888; /* Texto cinza claro */
+    background-color: #555; 
+    color: #888; 
     border-color: #666;
     cursor: not-allowed;
     transform: none;
 }
 
-/* Botão específico para "Cadastrar Usuário" na tela de login */
+
 #cadastroLink {
     background-color: transparent;
-    color: #DAA520; /* Texto dourado */
-    border: 1px solid #DAA520; /* Borda dourada */
-    margin-top: 20px; /* Espaçamento acima do botão */
-    width: 100%; /* Ocupar largura total */
+    color: #DAA520; 
+    border: 1px solid #DAA520; 
+    margin-top: 20px; 
+    width: 100%; 
 }
 
 #cadastroLink:hover {
-    background-color: rgba(218, 165, 32, 0.1); /* Fundo dourado bem sutil no hover */
-    color: #FFD700; /* Dourado mais vivo no hover */
+    background-color: rgba(218, 165, 32, 0.1); 
+    color: #FFD700; 
 }
 
-/* Mensagens de feedback */
+
 #mensagemLogin,
 #mensagemCadastro {
     text-align: center;
     margin-top: 15px;
     padding: 10px;
     border-radius: 5px;
-    min-height: 1.5em; /* Para evitar que o layout salte */
+    min-height: 1.5em; 
     font-weight: bold;
 }
 
-.error { /* Classe adicionada via JS */
-    color: #FF6347; /* Vermelho tomate para erros, bom contraste */
-    background-color: rgba(255, 99, 71, 0.1); /* Fundo levemente avermelhado */
+.error { 
+    color: #FF6347; 
+    background-color: rgba(255, 99, 71, 0.1); 
     border: 1px solid #FF6347;
 }
 
-/* Tabela de Usuários */
+
 table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
-    box-shadow: 0 0 10px rgba(218, 165, 32, 0.2); /* Sombra dourada sutil na tabela */
+    box-shadow: 0 0 10px rgba(218, 165, 32, 0.2); 
 }
 
 th, td {
-    border: 1px solid #DAA520; /* Bordas douradas para células */
+    border: 1px solid #DAA520; 
     padding: 12px;
     text-align: left;
     vertical-align: middle;
 }
 
 th {
-    background-color: #2c2c2c; /* Fundo escuro para cabeçalho da tabela */
-    color: #DAA520; /* Texto dourado no cabeçalho */
+    background-color: #2c2c2c; 
+    color: #DAA520; 
     font-size: 1.1em;
     text-transform: uppercase;
 }
 
-/* Estilização de linhas alternadas para melhor leitura, opcional */
+
 tbody tr:nth-child(even) {
-    background-color: rgba(255, 255, 255, 0.03); /* Cor de fundo muito sutil para linhas pares */
+    background-color: rgba(255, 255, 255, 0.03); 
 }
 
-/* Ajustes para botões dentro da tabela */
+
 td button {
-    padding: 8px 12px; /* Botões um pouco menores na tabela */
+    padding: 8px 12px; 
     font-size: 0.9em;
-    margin-right: 5px; /* Espaço entre botões de ação se estiverem na mesma célula */
+    margin-right: 5px; 
 }
 td button:last-child {
     margin-right: 0;
 }
 
-/* Media Query para telas menores (exemplo) */
+
 @media (max-width: 600px) {
     h2 {
         font-size: 1.5em;
@@ -212,9 +212,8 @@ td button:last-child {
         font-size: 0.9em;
     }
 
-    /* Forçar a tabela a não ser tão larga em telas pequenas,
-       pode ser necessário adicionar scroll horizontal se o conteúdo for muito grande. */
+    
     #usuariosSection {
-        overflow-x: auto; /* Permite rolagem horizontal na tabela se necessário */
+        overflow-x: auto; 
     }
 }
