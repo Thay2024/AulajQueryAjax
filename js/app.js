@@ -150,7 +150,7 @@ $("#formUser").submit(function(evento) {
         
         dadoUsuario.senha = senha;
         
-        dadoUsuario.cargo = (cargoLogado === 'Administrador') ? $("#cargo").val() : "";
+        dadoUsuario.cargo = (cargoLogado === 'Administrador') ? $("#cargo").val() : "Especialista";
     }
 
     $.ajax({
